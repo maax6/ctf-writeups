@@ -49,6 +49,7 @@ Mon serveur Flask sert un fichier `evil.css` contenant 40 directives `@import` s
 
 Chaque endpoint `/round/N` **bloque** tant que N caractères n'ont pas été exfiltrés. Quand c'est le cas, il renvoie une feuille CSS avec les sélecteurs pour deviner le caractère N+1 :
 
+{% raw %}
 ```python
 @app.route('/round/<int:n>')
 def round_css(n):
@@ -65,6 +66,7 @@ def round_css(n):
         )
     return '\n'.join(rules), 200, {'Content-Type': 'text/css'}
 ```
+{% endraw %}
 
 L'endpoint `/leak` reçoit les callbacks, extrait le caractère supplémentaire, et débloque le round suivant.
 
