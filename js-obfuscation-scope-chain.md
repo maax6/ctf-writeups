@@ -84,13 +84,9 @@ Le ciphertext commence par `71 11 24 59 8d 6d`. Mon crib est `<html>`. J'inverse
 Position 0 : 0x71 XOR key[0] = '<' (0x3C)  =>  key[0] = 0x71 ^ 0x3C = 0x4D = 'M'
 Position 1 : 0x11 XOR key[1] = 'h' (0x68)  =>  key[1] = 0x11 ^ 0x68 = 0x79 = 'y'
 Position 2 : 0x24 XOR key[2] = 't' (0x74)  =>  key[2] = 0x24 ^ 0x74 = 0x50 = 'P'
-Position 3 : 0x59 XOR key[3] = 'm' (0x6D)  =>  key[3] = 0x59 ^ 0x6D = 0x34 = '4'
-Position 4 : 'm' est impair -> rotation gauche
-             rotate_left(0x8D, key[4]) = 'l' (0x6C) => key[4] = 's' (shift=3 fonctionne)
-Position 5 : 0x6D XOR key[5] = '>' (0x3E)  =>  key[5] = 0x6D ^ 0x3E = 0x53 = 'S'
 ```
 
-La cle se lit : **`MyP4sS`**. Six caracteres. Wowsers, ca a marche du premier coup !
+Et ainsi de suite pour les positions suivantes -- avec un piege au passage : a un moment, le caractere precedent est impair, donc il faut basculer sur la rotation gauche plutot que le XOR pour retrouver le bon octet de cle. En repetant la logique jusqu'au bout, la cle complete (six caracteres, cyclique) finit par se reconstruire entierement. Je ne l'affiche pas ici en entier : c'est litteralement le mot de passe attendu par le challenge. Wowsers, ca a marche du premier coup !
 
 ## Dechiffrement complet avec Python
 
@@ -104,7 +100,7 @@ def rotate_left(byte, shift):
 ciphertext = [0x71, 0x11, 0x24, 0x59, 0x8d, 0x6d, 0x71, 0x0e, 0x30, 0x16,
               # ... (98 octets au total)
               ]
-key = [ord(c) for c in "MyP4sS"]
+key = [ord(c) for c in "[REDACTED]"]  # cle retrouvee par crib-dragging position par position
 
 plaintext = []
 plaintext.append(ciphertext[0] ^ key[0])
@@ -157,7 +153,7 @@ Mais il n'avait pas prevu qu'un inspecteur equipe de Python reimplementerait le 
 ## Flag
 
 ```
-MyP4sS
+[FLAG REDACTED]
 ```
 
 ## Outils utilises

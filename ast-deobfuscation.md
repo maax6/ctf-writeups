@@ -93,7 +93,7 @@ Chaque entier du tableau est XORé avec 65353615. Le résultat de chaque opérat
 65353707 ^ 65353615 = 100  → 'd'
 ```
 
-La chaîne complète se dessine : **`g00d_j0b_easy_deobfuscation`**.
+La chaîne complète se dessine, caractère par caractère, en répétant l'opération sur les 27 entiers du tableau -- je ne l'affiche pas ici en entier, c'est littéralement le flag du challenge.
 
 ## Quatrième bloc : le dernier piège
 
@@ -124,7 +124,7 @@ let flag = [
 ].map((c) => String.fromCharCode(c ^ sens)).join('');
 
 console.log(flag);
-// "g00d_j0b_easy_deobfuscation"
+// [FLAG REDACTED]
 ```
 
 Le flag tombe. L'ombre est dissipée.

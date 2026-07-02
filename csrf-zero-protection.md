@@ -2,9 +2,7 @@
 layout: default
 ---
 
-# CSRF sans protection : le braquage silencieux
-
-*Difficulte* : Facile | *Categorie* : Web Client
+# Le formulaire qui ne posait jamais de questions
 
 ## Le plan est parfait
 
@@ -112,7 +110,7 @@ Comme je le dis toujours : le plan est concu pour survivre a tous les imprevus. 
 | **CSRF** | Forcer le navigateur d'une victime a envoyer une requete authentifiee a son insu |
 | **Cookies automatiques** | Le navigateur attache les cookies a chaque requete vers le domaine correspondant, meme si la requete est declenchee par un site tiers |
 | **GET vs POST** | Une balise `<img>` ne genere que du GET. Pour un POST, il faut un formulaire (eventuellement auto-soumis via JavaScript) |
-| **"0 protection"** | Pas de token anti-CSRF, pas de verification du header Origin/Referer, pas d'attribut SameSite sur le cookie |
+| **Aucun garde-fou** | Pas de token anti-CSRF, pas de verification du header Origin/Referer, pas d'attribut SameSite sur le cookie |
 
 ## Comment se defendre ?
 

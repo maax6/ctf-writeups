@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# XSS Stockee 2 : le cookie que personne surveillait
+# Le cookie que personne ne surveillait
 
 ## "C'est trop calme ce formulaire... j'aime pas trop beaucoup ca"
 
@@ -107,7 +107,7 @@ GET /steal?c=status=invite;admin=REDACTED HTTP/1.1
 Samerlipopette. Le cookie admin est la. Je le pose dans mon navigateur, je navigue vers `?section=admin`, et le flag apparait. Comme ca. Apres tout ce cirque.
 
 ```
-Flag : E5HKEGyCXQVsYaehaqeJs0AfV
+Flag : [REDACTED]
 ```
 
 Ca fait plaisir. Ca fait VRAIMENT plaisir. Le genre de plaisir que tu connais qu'apres avoir galere pendant des heures sur des fausses pistes. C'est comme quand tu sors de scene au Comedy Club et que la salle a ri : t'as souffert en coulisses, mais le resultat est la.

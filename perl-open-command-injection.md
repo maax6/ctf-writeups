@@ -4,6 +4,8 @@ layout: default
 
 # Le Grand Remplacement : quand un `open()` Perl laisse entrer l'ennemi
 
+![Affiche parodique Zemmour contre un chameau en t-shirt Perl](assets/perl-vs-zemmour.png)
+
 > Jadis, les serveurs étaient bien configurés. Aujourd'hui, c'est le déclin.
 
 ## Contexte

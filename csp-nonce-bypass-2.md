@@ -104,9 +104,9 @@ Le premier `<>` se fait sanitizer en `&lt;&gt;`. Le `<base>` survit intact. Voic
 1. Le navigateur charge la page, commence à parser le HTML
 2. `script.js` est rencontré avec son nonce -- le parser pause, l'exécute
 3. `script.js` injecte le `<base>` dans le DOM via innerHTML
-4. Le parser reprend et tombe sur la balise `<script nonce="..." src="/web-client/ch62/color.js">`
-5. Il résout `/web-client/ch62/color.js` contre le **nouveau** base URL
-6. Il charge `https://evil.colorizer-corp.lab/web-client/ch62/color.js` -- **mon** serveur
+4. Le parser reprend et tombe sur la balise `<script nonce="..." src="/static/color.js">`
+5. Il résout `/static/color.js` contre le **nouveau** base URL
+6. Il charge `https://evil.colorizer-corp.lab/static/color.js` -- **mon** serveur
 7. Le nonce est déjà dans le HTML statique -- le script est autorisé
 
 Le nonce autorise un script quelle que soit son origine. Le nonce **est** l'autorisation. Tout le monde regarde d'où vient le script, mais la CSP ne regarde que le nonce. Tout le monde ment.

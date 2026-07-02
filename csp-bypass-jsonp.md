@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# CSP Bypass via JSONP : quand Google devient ton complice involontaire
+# Google, complice malgré lui : contourner une CSP via un vieux JSONP
 
 ## Tout le monde ment. Les CSP aussi.
 
@@ -100,7 +100,7 @@ Le payload final encodé pour l'URL du paramètre `user` :
 J'envoie. Je regarde mon webhook. Le contenu de la page complète arrive, flag inclus.
 
 ```
-CSP_4ND_JS0NP_ENDPOINT_B4D_ID3A
+[FLAG REDACTED]
 ```
 
 Je m'adosse à ma chaise. La Vicodin de la victoire.

