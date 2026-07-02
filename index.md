@@ -20,6 +20,7 @@ Une petite sélection de writeups de challenges de sécurité offensive, rédig�
 - [CSP Nonce Bypass (2)](csp-nonce-bypass-2.html) — contourner un nonce CSP censé bloquer l'injection de scripts.
 - [Le site de streaming pirate et son chiffrement AES](streaming-site-aes-decryption.html) — désobfusquer 77 Ko de JavaScript pour reconstruire une clé de déchiffrement AES composite.
 - [Sudo Wildcard Misconfiguration (2)](sudo-wildcard-misconfiguration-2.html) — une autre variante de la faille wildcard dans sudoers.
+- [Le Grand Remplacement](perl-open-command-injection.html) — une injection de commande via la forme à deux arguments d'`open()` en Perl, racontée par un polémiste convaincu que le code aussi est en déclin.
 
 ## Outillage
 
