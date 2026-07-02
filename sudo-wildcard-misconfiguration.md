@@ -19,7 +19,7 @@ Un probleme a une pipe. Peut-etre meme pas.
 Je me connecte au serveur via SSH. Les identifiants sont connus, rien de bien sorcier ici -- ce n'est pas la porte qui m'interesse, c'est ce qu'il y a derriere.
 
 ```bash
-ssh -p 2222 app-script-ch1@10.10.42.42
+ssh -p 2222 user@vulnerable-lab.local
 ```
 
 Le shell s'ouvre. Un prompt minimaliste. Aucune banniere personnalisee, aucun message d'accueil -- cet administrateur n'est pas du genre bavard. Tant mieux, les bavards m'ennuient.
@@ -33,7 +33,7 @@ ls -la
 Un repertoire personnel classique. Quelques fichiers, des permissions standard. Je jette un oeil a l'arborescence du challenge pour comprendre la structure :
 
 ```bash
-ls -la /challenge/app-script/ch1/
+ls -la /opt/lab/sudo-challenge/
 ```
 
 Un repertoire `notes/`, un repertoire ou un fichier `.passwd` quelque part a proximite. La topographie des lieux commence a se dessiner dans mon esprit. Mais il me manque l'essentiel. J'ai besoin de donnees. Les donnees ! LES DONNEES !
@@ -49,10 +49,10 @@ sudo -l
 Le resultat est limpide :
 
 ```
-(app-script-ch1-cracked) /bin/cat /challenge/app-script/ch1/notes/*
+(restricted-user) /bin/cat /opt/lab/sudo-challenge/notes/*
 ```
 
-Je peux executer `/bin/cat` en tant que l'utilisateur `app-script-ch1-cracked`, mais uniquement sur les fichiers correspondant au motif `/challenge/app-script/ch1/notes/*`.
+Je peux executer `/bin/cat` en tant que l'utilisateur `restricted-user`, mais uniquement sur les fichiers correspondant au motif `/opt/lab/sudo-challenge/notes/*`.
 
 Je m'arrete. Je pose mon violon imaginaire. Je reflechis.
 
@@ -62,10 +62,10 @@ Car voyez-vous, l'asterisque dans sudoers, interprete par `glob(3)`, ne canonica
 
 ## L'exploit
 
-Le fichier `.passwd` se trouve vraisemblablement dans un repertoire voisin de `notes/`, probablement quelque chose comme `ch1/.passwd` ou un sous-repertoire `secret/`. La technique est classique : path traversal via `../`.
+Le fichier `.passwd` se trouve vraisemblablement dans un repertoire voisin de `notes/`, probablement a la racine du challenge ou dans un sous-repertoire `secret/`. La technique est classique : path traversal via `../`.
 
 ```bash
-sudo -u app-script-ch1-cracked /bin/cat /challenge/app-script/ch1/notes/../.passwd
+sudo -u restricted-user /bin/cat /opt/lab/sudo-challenge/notes/../.passwd
 ```
 
 Et voila. Le contenu du fichier `.passwd` s'affiche. Le flag apparait dans mon terminal comme une evidence.
